@@ -22,6 +22,7 @@ module.exports = function (app) {
       }
 
       const filesMetadata = files
+        .filter((file) => file.endsWith(".md"))
         .map((file) => {
           const data = matter(
             fs.readFileSync(`posts/published/${file}`, "utf8"),
