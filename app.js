@@ -1,6 +1,5 @@
 const express = require("express");
 const http = require("http");
-const PORT = 5000;
 const postsRoute = require("./routes/posts");
 const imagesRoute = require("./routes/images");
 
@@ -14,6 +13,7 @@ app.get("/", (req, res) => {
 postsRoute(app);
 imagesRoute(app);
 
+const PORT = process.env.API_PORT || 5000;
 server.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
