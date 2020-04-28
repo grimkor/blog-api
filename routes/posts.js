@@ -35,6 +35,7 @@ module.exports = function (app) {
             data: {
               ...data.data,
               readingTime: Math.ceil(readingTime(data.content).minutes),
+              filename: file.split('.')[0]
             },
             content: "",
           };
